@@ -10,7 +10,7 @@ const HomePage = ({ movies }) => {
         <div className="home-col-1-context-1">
           <p className="home-paragraph-1">New Trailers</p>
           <p className="home-paragraph-2">
-            sort by <span className="date-filter">Today</span>
+            sort by:&nbsp;&nbsp; <span className="date-filter">Today</span>
           </p>
         </div>
       </div>
@@ -24,7 +24,7 @@ const HomePage = ({ movies }) => {
               className="movie-image"
             />
             <div className="movie-title">{movie.name}</div>
-            <div className="movie data">
+            <div className="movie-date">
               Released On: {movie.first_air_date}
             </div>
           </div>

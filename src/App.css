@@ -78,7 +78,8 @@ nav {
 .create-account-nav-btn:hover,
 .create-account-nav-btn:active {
   background: var(--dark-one);
-  box-shadow: 0 0 0 1.5px var(--minor-one);
+  box-shadow: 0 0 0 1.5px var(--light-one);
+  color: var(--minor-one);
 }
 .login-nav-btn {
   margin-left: 1.4rem;
@@ -94,7 +95,7 @@ nav {
 }
 /*  */
 .home-page {
-  padding-top: 4rem;
+  padding: 0 2rem;
   display: grid;
   grid-template-columns: 300px auto;
   align-items: start;
@@ -109,16 +110,23 @@ nav {
 .home-page-col-1::-webkit-scrollbar {
   display: none;
 }
+.home-col-1-context-1 {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-around;
+}
 /* Home Page Col 2 */
 .homepage-col-2 {
+  margin-top: 4rem;
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
   overflow-y: scroll;
 }
 .homepage-col-2::-webkit-scrollbar {
   width: 0.8rem;
-  background: transparent;
+  background: var(--dark-two);
 }
 .homepage-col-2::-webkit-scrollbar-thumb {
   background: var(--minor-one);
@@ -127,4 +135,6 @@ nav {
 }
 .movie {
   max-width: 22rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 1.5px 8px rgba(23, 26, 29, 0.4);
 }
