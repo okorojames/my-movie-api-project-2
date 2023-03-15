@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300&display=swap");
 :root {
   --dark-one: #070708;
   --dark-two: #0a0b0c;
@@ -6,4 +7,124 @@
   --minor-one: #e03131;
   --minor-two: #cc5de8;
   --minor-three: #74c0fc;
+}
+/* 
+for styling scroll bars
+
+element::-webkit-scrollbar {
+  display: none;
+}
+
+ekement::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+element::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+img {
+  width: 100%;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background: var(--dark-one);
+  font-size: 1.8rem;
+  color: var(--light-one);
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+header {
+  border-bottom: 2px solid rgba(23, 26, 29, 0.52);
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6rem 6rem;
+}
+.nav-logo {
+  width: 48px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav-link {
+  text-decoration: none;
+  color: var(--light-one);
+  padding: 0 1rem;
+}
+.create-account-nav-btn {
+  margin-left: 4rem;
+  background: var(--minor-one);
+  border-radius: 0.8rem;
+  padding: 1rem 0.4rem;
+  transition: 0.6s;
+}
+.create-account-nav-btn:hover,
+.create-account-nav-btn:active {
+  background: var(--dark-one);
+  box-shadow: 0 0 0 1.5px var(--minor-one);
+}
+.login-nav-btn {
+  margin-left: 1.4rem;
+  box-shadow: 0 0 0 1.5px var(--minor-one);
+  border-radius: 0.8rem;
+  padding: 1rem 2rem;
+  transition: 0.5s;
+}
+.login-nav-btn:hover,
+.login-nav-btn:active {
+  color: var(--minor-one);
+  box-shadow: 0 0 0 1.5px var(--light-one);
+}
+/*  */
+.home-page {
+  padding-top: 4rem;
+  display: grid;
+  grid-template-columns: 300px auto;
+  align-items: start;
+  gap: 4rem;
+}
+/* Home Page Col 1 */
+.home-page-col-1 {
+  border-right: 2px solid rgba(23, 26, 29, 0.852);
+  height: 100vh;
+  overflow-y: scroll;
+}
+.home-page-col-1::-webkit-scrollbar {
+  display: none;
+}
+/* Home Page Col 2 */
+.homepage-col-2 {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  overflow-y: scroll;
+}
+.homepage-col-2::-webkit-scrollbar {
+  width: 0.8rem;
+  background: transparent;
+}
+.homepage-col-2::-webkit-scrollbar-thumb {
+  background: var(--minor-one);
+  border-radius: 10rem;
+  height: 3px;
+}
+.movie {
+  max-width: 22rem;
 }
