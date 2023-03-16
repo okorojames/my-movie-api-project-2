@@ -23,7 +23,7 @@ const HomePage = ({ movies }) => {
               alt=""
               className="movie-image"
             />
-            <div className="movie-title">{movie.name}</div>
+            <div className="movie-title">Title: {movie.name}</div>
             <div className="movie-date">
               Released On: {movie.first_air_date}
             </div>
