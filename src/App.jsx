@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import HomePage from "./components/HomePage";
 
 function App() {
+  const [movies1, setMovies1] = useState();
   const [movies, setMovies] = useState();
   // getting the movie data
   async function getMovies() {
@@ -29,6 +30,7 @@ function App() {
     const allData = [...data1.results, ...data2.results, ...data3.results];
     //
     setMovies(allData);
+    setMovies1(data3.results);
   }
   // end getting the movie data
   //
@@ -40,7 +42,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {movies && <HomePage movies={movies} />}
+      {movies && <HomePage movies={movies} movies1={movies1} />}
     </div>
   );
 }
