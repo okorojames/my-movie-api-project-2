@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import HomePage from "./components/HomePage";
+import MoreInfoPage from "./components/MoreInfoPage";
 
 function App() {
   const [movies1, setMovies1] = useState();
@@ -51,10 +52,19 @@ function App() {
   }, []);
   //
   return (
-    <div className="App">
-      <Header />
-      {movies && <HomePage movies={movies} movies1={movies1} />}
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={movies && <HomePage movies={movies} movies1={movies1} />}
+          />
+          <Route path="/more-info" element={<MoreInfoPage />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

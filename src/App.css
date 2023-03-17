@@ -47,10 +47,15 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
+a:link,
+a:visited {
+  text-decoration: none;
+}
 header {
   border-bottom: 2px solid rgba(23, 26, 29, 0.52);
 }
 nav {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -62,6 +67,7 @@ nav {
 .nav-links {
   display: flex;
   align-items: center;
+  transition: 0.5s;
 }
 .nav-link {
   text-decoration: none;
@@ -97,6 +103,21 @@ nav {
 .login-nav-btn:active {
   color: var(--minor-one);
   box-shadow: 0 0 0 1.5px var(--light-one);
+}
+/* Hamburger */
+.hamburger {
+  display: none;
+}
+.burger {
+  height: 3px;
+  width: 45px;
+  border-radius: 0.8rem;
+  background: var(--light-one);
+  margin-top: 10px;
+  transition: 0.5s;
+}
+.burger:first-child {
+  margin-top: 0;
 }
 /*  */
 .home-page {
@@ -200,4 +221,92 @@ nav {
   display: grid;
   justify-items: center;
   gap: 2rem;
+}
+/*  */
+/* MEDIA QUERIES */
+/*  */
+/*  */
+@media screen and (max-width: 1074px) {
+  .homepage-col-2 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/*  */
+/*  */
+@media screen and (max-width: 992px) {
+  .homepage-col-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/*  */
+/*  */
+@media screen and (max-width: 850px) {
+  .nav-links {
+    flex-direction: column;
+    position: fixed;
+    /* top: 70px; */
+    top: -2000px;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark-three);
+    gap: 3rem;
+  }
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+  .create-account-nav-btn {
+    margin-left: 0;
+  }
+  .create-account-nav-btn:hover,
+  .create-account-nav-btn:active {
+    background: transparent;
+  }
+  .login-nav-btn {
+    margin-left: 0;
+  }
+}
+/*  */
+/*  */
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 1rem 1.2rem;
+  }
+  .homepage-col-2 {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
+}
+/*  */
+/*  */
+@media screen and (max-width: 578px) {
+  nav {
+    padding: 1rem 1rem;
+  }
+  .homepage-col-2 {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
+}
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/* working on the js functionality of the nav bar */
+.nav-toggle.nav-links {
+  top: 70px;
+}
+.nav--toggle.burger--one {
+  transform: rotate(-45deg) translate(0, 5px);
+}
+.nav--toggle.burger--two {
+  display: none;
+}
+.nav--toggle.burger--three {
+  transform: rotate(45deg) translate(0, -5px);
 }

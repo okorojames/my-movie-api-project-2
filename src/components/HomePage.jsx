@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import defaultImg from "../images/spidey.jpeg";
 
 const HomePage = ({ movies, movies1 }) => {
@@ -21,9 +22,35 @@ const HomePage = ({ movies, movies1 }) => {
           <p className="day-sort">Upcoming!</p>
         </div>
         <div className="home-col-1-items">
-          {movies1.map((movie) => (
-            <div className="movie" key={movie.id}>
+          {movies1.map((movie1, i) => (
+            <Link to="/more-info">
+              <div className="movie" key={i}>
+                <div className="movie-image-container">
+                  <img
+                    src={`https://themoviedb.org/t/p/w220_and_h330_face${movie1.poster_path}`}
+                    alt=""
+                    className="movie-image"
+                  />
+                </div>
+                <div className="movie-title">
+                  Title: <span className="movie-name">{movie1.name}</span>
+                </div>
+                <div className="movie-date">
+                  Released On:
+                  <span className="movie--date">&nbsp;Upcoming</span>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+      {/* Home ccol 2 */}
+      <div className="homepage-col-2">
+        {movies.map((movie, i) => (
+          <Link to="/more-info">
+            <div className="movie" key={i}>
               <div className="movie-image-container">
+                {" "}
                 <img
                   src={`https://themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`}
                   alt=""
@@ -34,33 +61,11 @@ const HomePage = ({ movies, movies1 }) => {
                 Title: <span className="movie-name">{movie.name}</span>
               </div>
               <div className="movie-date">
-                Released On:
-                <span className="movie--date">&nbsp;Upcoming</span>
+                Released On:{" "}
+                <span className="movie--date">{movie.first_air_date}</span>
               </div>
             </div>
-          ))}
-        </div>
-      </div>
-      {/* Home ccol 2 */}
-      <div className="homepage-col-2">
-        {movies.map((movie) => (
-          <div className="movie" key={movie.id}>
-            <div className="movie-image-container">
-              {" "}
-              <img
-                src={`https://themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`}
-                alt=""
-                className="movie-image"
-              />
-            </div>
-            <div className="movie-title">
-              Title: <span className="movie-name">{movie.name}</span>
-            </div>
-            <div className="movie-date">
-              Released On:{" "}
-              <span className="movie--date">{movie.first_air_date}</span>
-            </div>
-          </div>
+          </Link>
         ))}
       </div>
     </main>
