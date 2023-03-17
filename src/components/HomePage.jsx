@@ -35,7 +35,7 @@ const HomePage = ({ movies, movies1 }) => {
               </div>
               <div className="movie-date">
                 Released On:
-                <span className="movie--date">{movie.first_air_date}</span>
+                <span className="movie--date">&nbsp;Upcoming</span>
               </div>
             </div>
           ))}

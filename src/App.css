@@ -199,4 +199,5 @@ nav {
 .home-col-1-items {
   display: grid;
   justify-items: center;
+  gap: 2rem;
 }
