@@ -18,7 +18,7 @@ const HomePage = ({ movies, movies1 }) => {
           </div>
         </div>
         <div className="home-col-1-context-2">
-          <p className="day-sort">Today</p>
+          <p className="day-sort">Upcoming!</p>
         </div>
         <div className="home-col-1-items">
           {movies1.map((movie) => (

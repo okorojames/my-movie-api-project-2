@@ -26,11 +26,22 @@ function App() {
     );
     const data3 = await res3.json();
     //
+    // data four
+    const res4 = await fetch(
+      "https://api.themoviedb.org/3/movie/upcoming?api_key=296b046a3d7afb8c7d9de3d141e11353&language=en-US&page=1"
+    );
+    const data4 = await res4.json();
+    //
     // Combining the data 1 and data 2 together
-    const allData = [...data1.results, ...data2.results, ...data3.results];
+    const allData = [
+      ...data1.results,
+      ...data2.results,
+      ...data3.results,
+      data4.results,
+    ];
     //
     setMovies(allData);
-    setMovies1(data3.results);
+    setMovies1(data4.results);
   }
   // end getting the movie data
   //
