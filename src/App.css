@@ -278,6 +278,15 @@ nav {
   .homepage-col-2 {
     grid-template-columns: repeat(1, 1fr);
     justify-items: center;
+    overflow-y: auto;
+  }
+  .home-page-col-1 {
+    border-right: 0;
+    overflow-y: auto;
+  }
+  /*  */
+  .home-page {
+    grid-template-columns: 1fr;
   }
 }
 /*  */
@@ -299,7 +308,7 @@ nav {
 /*  */
 /* working on the js functionality of the nav bar */
 .nav-toggle.nav-links {
-  top: 70px;
+  top: 60px;
 }
 .nav--toggle.burger--one {
   transform: rotate(-45deg) translate(0, 5px);
