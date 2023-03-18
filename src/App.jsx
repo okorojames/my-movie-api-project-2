@@ -44,6 +44,15 @@ function App() {
     setMovies(allData);
     setMovies1(data4.results);
   }
+  //
+  //
+  // working on the filter on search
+  function onSearchMovies(e) {
+    e.preventDefault();
+    const searchMovies = movies.filter((movie) => movie.name);
+    setMovies(searchMovies);
+  }
+  //
   // end getting the movie data
   //
   // useEffect which helps makes the movie data load and fetch before page contents even display
@@ -54,10 +63,9 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header />
+        <Header onSearchMovies={onSearchMovies} />
         <Routes>
           <Route
-            exact
             path="/"
             element={movies && <HomePage movies={movies} movies1={movies1} />}
           />

@@ -1,7 +1,9 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import logoImg from "../images/logo-no-bg.png";
+import SearchMovie from "./SearchMovie";
 
-const Header = () => {
+const Header = ({ onSearchMovies }) => {
   // useRef variables
   const nav_links = useRef();
   const burger_one = useRef();
@@ -19,21 +21,24 @@ const Header = () => {
       <nav>
         <img src={logoImg} alt="" className="nav-logo" />
         <div className="nav-links" ref={nav_links}>
-          <a href="" className="nav-link">
+          <Link to="/" className="nav-link">
+            Home
+          </Link>
+          <Link to="all-movies" className="nav-link">
             All Movies
-          </a>
-          <a href="" className="nav-link">
+          </Link>
+          <Link to="popular" className="nav-link">
             Popular
-          </a>
-          <a href="" className="nav-link">
+          </Link>
+          <Link to="tv-shows" className="nav-link">
             Tv Shows
-          </a>
-          <a href="" className="nav-link create-account-nav-btn">
+          </Link>
+          <Link to="all-movies" className="nav-link create-account-nav-btn">
             Create Account
-          </a>
-          <a href="" className="nav-link login-nav-btn">
+          </Link>
+          <Link to="all-movies" className="nav-link login-nav-btn">
             Login
-          </a>
+          </Link>
         </div>
         {/* hamburger */}
         <div className="hamburger" onClick={toggleNav}>
@@ -42,6 +47,7 @@ const Header = () => {
           <div className="burger burger--three" ref={burger_three}></div>
         </div>
       </nav>
+      <SearchMovie onSearchMovies={onSearchMovies} />
     </header>
   );
 };
