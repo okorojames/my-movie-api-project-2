@@ -47,7 +47,7 @@ const Header = ({ onSearchMovies }) => {
           <div className="burger burger--three" ref={burger_three}></div>
         </div>
       </nav>
-      <SearchMovie onSearchMovies={onSearchMovies} />
+      {/* <SearchMovie onSearchMovies={onSearchMovies} /> */}
     </header>
   );
 };
