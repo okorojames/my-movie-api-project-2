@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import logoImg from "../images/logo-no-bg.png";
-import SearchMovie from "./SearchMovie";
 
 const Header = ({ onSearchMovies }) => {
   // useRef variables
@@ -19,7 +18,9 @@ const Header = ({ onSearchMovies }) => {
   return (
     <header>
       <nav>
-        <img src={logoImg} alt="" className="nav-logo" />
+        <Link to="/" className="nav-logo">
+          <img src={logoImg} alt="" className="nav-logo" />
+        </Link>
         <div className="nav-links" ref={nav_links}>
           <Link to="/" className="nav-link">
             Home
@@ -47,7 +48,6 @@ const Header = ({ onSearchMovies }) => {
           <div className="burger burger--three" ref={burger_three}></div>
         </div>
       </nav>
-      {/* <SearchMovie onSearchMovies={onSearchMovies} /> */}
     </header>
   );
 };
