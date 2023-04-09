@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import defaultImg from "../images/spidey.jpeg";
+import defaultImg from "./images/defaultImg.jpg";
 
 const HomePage = ({ movies, movies1 }) => {
-  console.log(movies);
   // state for the search function
   const [search, setSearch] = useState("");
-  console.log(search);
+
   //
   return (
     <div className="home-page-holder">
@@ -31,11 +30,13 @@ const HomePage = ({ movies, movies1 }) => {
               <Link to="/more-info" key={index}>
                 <div className="movie">
                   <div className="movie-image-container">
-                    <img
-                      src={`https://themoviedb.org/t/p/w220_and_h330_face${movie1.poster_path}`}
-                      alt=""
-                      className="movie-image"
-                    />
+                    {
+                      <img
+                        src={`https://themoviedb.org/t/p/w220_and_h330_face${movie1.poster_path}`}
+                        alt=""
+                        className="movie-image"
+                      />
+                    }
                   </div>
                   <div className="movie-title">
                     Title: <span className="movie-name">{movie1.name}</span>
@@ -55,11 +56,15 @@ const HomePage = ({ movies, movies1 }) => {
             <Link to="/more-info" key={index}>
               <div className="movie">
                 <div className="movie-image-container">
-                  <img
-                    src={`https://themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`}
-                    alt=""
-                    className="movie-image"
-                  />
+                  {movie.poster_path === null ? (
+                    <img src={defaultImg} alt="" className="movie-image" />
+                  ) : (
+                    <img
+                      src={`https://themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`}
+                      alt=""
+                      className="movie-image"
+                    />
+                  )}
                 </div>
                 <div className="movie-title">
                   Title: <span className="movie-name">{movie.name}</span>

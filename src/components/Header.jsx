@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import logoImg from "../images/logo-no-bg.png";
 
-const Header = ({ onSearchMovies }) => {
+const Header = ({}) => {
   // useRef variables
   const nav_links = useRef();
   const burger_one = useRef();
@@ -28,17 +28,8 @@ const Header = ({ onSearchMovies }) => {
           <Link to="all-movies" className="nav-link">
             All Movies
           </Link>
-          <Link to="popular" className="nav-link">
-            Popular
-          </Link>
-          <Link to="tv-shows" className="nav-link">
-            Tv Shows
-          </Link>
-          <Link to="all-movies" className="nav-link create-account-nav-btn">
-            Create Account
-          </Link>
-          <Link to="all-movies" className="nav-link login-nav-btn">
-            Login
+          <Link to="/search-movie" className="nav-link create-account-nav-btn">
+            Search Movie
           </Link>
         </div>
         {/* hamburger */}

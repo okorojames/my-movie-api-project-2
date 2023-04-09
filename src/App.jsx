@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
-import HomePage from "./components/HomePage";
+import HomePage from "./HomePage";
 import MoreInfoPage from "./components/MoreInfoPage";
+import SearchMovie from "./components/SearchMovie";
 
 function App() {
   const [movies1, setMovies1] = useState();
@@ -70,6 +71,7 @@ function App() {
             element={movies && <HomePage movies={movies} movies1={movies1} />}
           />
           <Route path="/more-info" element={<MoreInfoPage />} />
+          <Route path="/search-movie" element={<SearchMovie />} />
         </Routes>
       </div>
     </BrowserRouter>
