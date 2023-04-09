@@ -51,9 +51,15 @@ const MoreInfoPage = () => {
           </div>
           <div>
             Plot:{" "}
-            <span className="movie--overview" style={{ opacity: ".5" }}>
-              {movie.overview}
-            </span>
+            {movie.overview === "" ? (
+              <span className="movie--overview" style={{ opacity: ".5" }}>
+                No movie description available here
+              </span>
+            ) : (
+              <span className="movie--overview" style={{ opacity: ".5" }}>
+                {movie.overview}
+              </span>
+            )}
           </div>
         </div>
       )}
