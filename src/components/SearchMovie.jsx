@@ -49,7 +49,16 @@ const SearchMovie = () => {
         </a>
       </form>
       {searchedMovie && (
-        <div className="searched--movies">
+        <div
+          className="searched--movies"
+          style={{
+            marginTop: "50px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "wrap",
+          }}
+        >
           <Link to="/more-info">
             <div className="movie">
               <div className="movie-image-container">
