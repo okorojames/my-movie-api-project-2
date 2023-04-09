@@ -33,12 +33,12 @@ const Header = ({}) => {
   }
   window.addEventListener("resize", () => {
     if (innerWidth > 850) {
-      navOverlay.current.classList.toggle("nav--toggle");
+      navOverlay.current.classList.remove("nav--toggle");
     } else if (
       innerWidth <= 850 &&
       nav_links.current.classList.contains("nav--toggle")
     ) {
-      navOverlay.current.classList.toggle("nav--toggle");
+      navOverlay.current.classList.add("nav--toggle");
     }
   });
   return (
