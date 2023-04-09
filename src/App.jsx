@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import HomePage from "./HomePage";
 import MoreInfoPage from "./components/MoreInfoPage";
 import SearchMovie from "./components/SearchMovie";
+import AllMovies from "./components/AllMovies";
 
 function App() {
   const [movies1, setMovies1] = useState();
@@ -44,16 +45,8 @@ function App() {
     //
     setMovies(allData);
     setMovies1(data4.results);
+    console.log(data1.results);
   }
-  //
-  //
-  // working on the filter on search
-  function onSearchMovies(e) {
-    e.preventDefault();
-    const searchMovies = movies.filter((movie) => movie.name);
-    setMovies(searchMovies);
-  }
-  //
   // end getting the movie data
   //
   // useEffect which helps makes the movie data load and fetch before page contents even display
@@ -64,14 +57,15 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header onSearchMovies={onSearchMovies} />
+        <Header />
         <Routes>
           <Route
             path="/"
             element={movies && <HomePage movies={movies} movies1={movies1} />}
           />
-          <Route path="/more-info" element={<MoreInfoPage />} />
+          <Route path="/movie/:id" element={<MoreInfoPage />} />
           <Route path="/search-movie" element={<SearchMovie />} />
+          <Route path="/all-movies" element={<AllMovies />} />
         </Routes>
       </div>
     </BrowserRouter>

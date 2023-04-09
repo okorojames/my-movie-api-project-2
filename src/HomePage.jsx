@@ -3,10 +3,6 @@ import { Link } from "react-router-dom";
 import defaultImg from "./images/defaultImg.jpg";
 
 const HomePage = ({ movies, movies1 }) => {
-  // state for the search function
-  const [search, setSearch] = useState("");
-
-  //
   return (
     <div className="home-page-holder">
       <main className="home-page">
@@ -27,7 +23,11 @@ const HomePage = ({ movies, movies1 }) => {
           </div>
           <div className="home-col-1-items">
             {movies1.map((movie1, index) => (
-              <Link to="/more-info" key={index}>
+              <Link
+                to={`/movie/${movie1.id}`}
+                state={{ movie: movie1 }}
+                key={index}
+              >
                 <div className="movie">
                   <div className="movie-image-container">
                     {
@@ -53,7 +53,7 @@ const HomePage = ({ movies, movies1 }) => {
         {/* Home ccol 2 */}
         <div className="homepage-col-2">
           {movies.map((movie, index) => (
-            <Link to="/more-info" key={index}>
+            <Link to={`/movie/${movie.id}`} state={{ movie }} key={index}>
               <div className="movie">
                 <div className="movie-image-container">
                   {movie.poster_path === null ? (

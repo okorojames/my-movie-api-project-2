@@ -56,7 +56,7 @@ const Header = ({}) => {
           <Link to="/" className="nav-link" onClick={closeNavLink}>
             Home
           </Link>
-          <Link to="all-movies" className="nav-link" onClick={closeNavLink}>
+          <Link to="/all-movies" className="nav-link" onClick={closeNavLink}>
             All Movies
           </Link>
           <Link
