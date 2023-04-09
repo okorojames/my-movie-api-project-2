@@ -45,7 +45,7 @@ function App() {
     //
     setMovies(allData);
     setMovies1(data4.results);
-    console.log(data2.results);
+    console.log(data4.results);
   }
   // end getting the movie data
   //

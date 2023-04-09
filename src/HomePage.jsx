@@ -39,7 +39,7 @@ const HomePage = ({ movies, movies1 }) => {
                     }
                   </div>
                   <div className="movie-title">
-                    Title: <span className="movie-name">{movie1.name}</span>
+                    Title: <span className="movie-name">{movie1.title}</span>
                   </div>
                   <div className="movie-date">
                     Released On:

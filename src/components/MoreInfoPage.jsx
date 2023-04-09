@@ -39,14 +39,15 @@ const MoreInfoPage = () => {
             )}
           </div>
           <div className="movie-title">
-            Title: <span className="movie-name">{movie.name}</span>
+            Title:{" "}
+            {<span className="movie-name">{movie.title}</span> || (
+              <span className="movie-name">{movie.name}</span>
+            )}
           </div>
           <div>
             Released On:{" "}
-            {movie.first_air_date === null ? (
-              <span className="movie--date">Upcoming!</span>
-            ) : (
-              <span className="movie--date">{movie.first_air_date}</span>
+            {<span className="movie--date">{movie.first_air_date}</span> || (
+              <span className="movie--date">{movie.released_date}</span>
             )}
           </div>
           <div>

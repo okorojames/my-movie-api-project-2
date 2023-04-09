@@ -1,20 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import defaultImg from "../images/defaultImg.jpg";
 
 const SearchMovie = () => {
   const [userInput, setUserInput] = useState();
   const [searchedMovie, setSearchedMovie] = useState();
+  const [initialMsg, setInitialMsg] = useState("You might like These");
   // styled component
   const searchedMoviesStyles = {
     display: "grid",
     justifyItems: "center",
   };
-  // submit user input
-  function submitUserInput(e) {
-    e.preventDefault();
-    getMovies();
-  }
   // fetching data
   async function getMovies() {
     const response = await fetch(
@@ -23,6 +19,15 @@ const SearchMovie = () => {
     const data = await response.json();
     setSearchedMovie(data.Search);
   }
+  // submit user input
+  function submitUserInput(e) {
+    e.preventDefault();
+    getMovies();
+    setInitialMsg(null);
+  }
+  useEffect(() => {
+    getMovies();
+  }, []);
   return (
     <div className="search--movie--section">
       <form
