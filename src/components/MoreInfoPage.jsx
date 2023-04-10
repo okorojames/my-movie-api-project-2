@@ -30,11 +30,12 @@ const MoreInfoPage = () => {
         >
           <div>
             {movie.poster_path === null ? (
-              <img src={defaultImg} alt="" />
+              <img src={defaultImg} alt="" style={{ width: "200px" }} />
             ) : (
               <img
                 src={`https://themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`}
                 alt=""
+                style={{ width: "200px" }}
               />
             )}
           </div>

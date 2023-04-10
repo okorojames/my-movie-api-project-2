@@ -5,7 +5,6 @@ import defaultImg from "../images/defaultImg.jpg";
 const SearchMovie = () => {
   const [userInput, setUserInput] = useState();
   const [searchedMovie, setSearchedMovie] = useState();
-  const [initialMsg, setInitialMsg] = useState("You might like These");
   // styled component
   const searchedMoviesStyles = {
     display: "grid",
@@ -19,15 +18,16 @@ const SearchMovie = () => {
     const data = await response.json();
     setSearchedMovie(data.Search);
   }
+  //
+  function getMovieData(e) {
+    e.preventDefault();
+    getMovies();
+  }
   // submit user input
   function submitUserInput(e) {
     e.preventDefault();
     getMovies();
-    setInitialMsg(null);
   }
-  useEffect(() => {
-    getMovies();
-  }, []);
   return (
     <div className="search--movie--section">
       <form
@@ -49,6 +49,7 @@ const SearchMovie = () => {
             background: "#e03131",
             padding: "10px 10px 10px 15px",
           }}
+          onClick={getMovieData}
         >
           Search
         </a>
