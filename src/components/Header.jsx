@@ -11,7 +11,7 @@ const Header = ({}) => {
   const navOverlay = useRef();
   //
   function toggleNav() {
-    nav_links.current.classList.toggle("nav-toggle");
+    nav_links.current.classList.toggle("nav--toggle");
     burger_one.current.classList.toggle("nav--toggle");
     burger_two.current.classList.toggle("nav--toggle");
     burger_three.current.classList.toggle("nav--toggle");
@@ -19,14 +19,14 @@ const Header = ({}) => {
   }
 
   function closeNavLink() {
-    nav_links.current.classList.remove("nav-toggle");
+    nav_links.current.classList.remove("nav--toggle");
     burger_one.current.classList.remove("nav--toggle");
     burger_two.current.classList.remove("nav--toggle");
     burger_three.current.classList.remove("nav--toggle");
     navOverlay.current.classList.remove("nav--toggle");
   }
   function toggleOverlay() {
-    nav_links.current.classList.toggle("nav-toggle");
+    nav_links.current.classList.toggle("nav--toggle");
     burger_one.current.classList.toggle("nav--toggle");
     burger_two.current.classList.toggle("nav--toggle");
     burger_three.current.classList.toggle("nav--toggle");
@@ -34,7 +34,7 @@ const Header = ({}) => {
   }
   window.addEventListener("resize", () => {
     if (innerWidth > 850) {
-      nav_links.current.classList.remove("nav-toggle");
+      nav_links.current.classList.remove("nav--toggle");
       burger_one.current.classList.remove("nav--toggle");
       burger_two.current.classList.remove("nav--toggle");
       burger_three.current.classList.remove("nav--toggle");
@@ -88,6 +88,7 @@ const Header = ({}) => {
         ref={navOverlay}
         onClick={toggleOverlay}
       ></div>
+      <div className="back--to--top"></div>
     </header>
   );
 };

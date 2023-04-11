@@ -260,9 +260,10 @@ nav {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(7, 7, 8, 0.96);
+  background: rgba(7, 7, 8, 0.9);
 }
 .video--overlay--h2 {
+  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -280,6 +281,15 @@ nav {
   -webkit-text-fill-color: transparent;
 }
 /*  */
+.all--movies--col {
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: stretch;
+  gap: 3rem;
+}
+/*  */
 /* MEDIA QUERIES */
 /*  */
 /*  */
@@ -290,6 +300,9 @@ nav {
   .homepage-col-2 {
     grid-template-columns: repeat(3, 1fr);
   }
+  .all--movies--col {
+    grid-template-columns: repeat(3, 1fr);
+  }
   .searched--movies--row {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -298,6 +311,9 @@ nav {
 /*  */
 @media screen and (max-width: 992px) {
   .homepage-col-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .all--movies--col {
     grid-template-columns: repeat(2, 1fr);
   }
   .searched--movies--row {
@@ -362,7 +378,7 @@ nav {
 /*  */
 @media screen and (max-width: 640px) {
   .all--movie--video {
-    height: 20vh;
+    height: 35vh;
   }
 }
 /*  */
@@ -374,6 +390,14 @@ nav {
   .homepage-col-2 {
     grid-template-columns: repeat(1, 1fr);
     justify-items: center;
+  }
+  .video--overlay--h2 {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 376px) {
+  .all--movies--col {
+    grid-template-columns: 1fr;
   }
 }
 /*  */
