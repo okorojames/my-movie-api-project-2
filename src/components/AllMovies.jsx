@@ -3,10 +3,7 @@ import vidIntro from "../video/vid-intro.mp4";
 
 const AllMovies = () => {
   return (
-    <div
-      className="all--movies--section"
-      style={{ marginTop: "80px", padding: "0 60px" }}
-    >
+    <div className="all--movies--section" style={{ marginTop: "80px" }}>
       <div className="all--movies--first--content">
         <video
           src={vidIntro}
