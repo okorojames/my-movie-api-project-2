@@ -46,6 +46,10 @@ const Header = ({}) => {
       navOverlay.current.classList.toggle("nav--toggle");
     }
   });
+  // to top btn
+  function toTop() {
+    scrollTo(0, 0);
+  }
   return (
     <header>
       <nav>
@@ -88,7 +92,7 @@ const Header = ({}) => {
         ref={navOverlay}
         onClick={toggleOverlay}
       ></div>
-      <div className="back--to--top"></div>
+      <i className="ri-arrow-up-s-line back--to--top" onClick={toTop}></i>
     </header>
   );
 };

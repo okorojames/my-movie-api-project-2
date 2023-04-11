@@ -440,3 +440,21 @@ nav {
   pointer-events: all;
   opacity: 0;
 }
+.back--to--top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 888;
+  bottom: 4%;
+  right: 1.5%;
+  font-size: 3.2rem;
+  color: var(--light-one);
+  cursor: pointer;
+  background: var(--dark-one);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.29);
+  padding: 2rem;
+}
