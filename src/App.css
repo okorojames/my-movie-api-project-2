@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap");
 :root {
   --dark-one: #070708;
   --dark-two: #0a0b0c;
@@ -245,10 +246,38 @@ nav {
   margin-top: -50px;
   position: relative;
 }
+.all--header--videos {
+  position: relative;
+}
 .all--movie--video {
   width: 100%;
   height: 50vh;
   object-fit: cover;
+}
+.video--overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(7, 7, 8, 0.96);
+}
+.video--overlay--h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3.8rem;
+  text-align: center;
+  font-family: "PT Serif", serif;
+  letter-spacing: -1.5;
+  background: -webkit-linear-gradient(
+    185deg,
+    rgb(224, 49, 49),
+    rgb(252, 188, 188)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 /*  */
 /* MEDIA QUERIES */
@@ -328,6 +357,12 @@ nav {
   /*  */
   .home-page {
     grid-template-columns: 1fr;
+  }
+}
+/*  */
+@media screen and (max-width: 640px) {
+  .all--movie--video {
+    height: 20vh;
   }
 }
 /*  */
