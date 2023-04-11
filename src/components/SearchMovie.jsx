@@ -17,6 +17,7 @@ const SearchMovie = () => {
     );
     const data = await response.json();
     setSearchedMovie(data.Search);
+    console.log(data.Search);
   }
   //
   function getMovieData(e) {
@@ -95,7 +96,7 @@ const SearchMovie = () => {
                   </div>
                   <div className="movie-date">
                     Released On:{" "}
-                    <span className="movie--date">{movie.Released}</span>
+                    {<span className="movie--date">{movie.Year}</span>}
                   </div>
                 </div>
               </Link>

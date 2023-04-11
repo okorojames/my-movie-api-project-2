@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import defaultImg from "../images/defaultImg.jpg";
 
-const MoreInfoPage = ({ movies1 }) => {
-  console.log(movies1);
+const MoreInfoPage = () => {
   let { state } = useLocation();
   const [movie, setMovie] = useState();
   useEffect(() => {
@@ -42,17 +41,13 @@ const MoreInfoPage = ({ movies1 }) => {
           </div>
           <div className="movie-title">
             Title:{" "}
-            {<span className="movie-name">{movie.title}</span> || (
-              <span className="movie-name">{movie.name}</span>
-            )}
+            <span className="movie-name">{movie.title || movie.name}</span>
           </div>
           <div>
             Released On:{" "}
-            {movie.release_date === " " || movie.release_date === null ? (
-              <span className="movie--date">Upcoming!</span>
-            ) : (
-              <span className="movie--date">{movie.first_air_date}</span>
-            )}
+            <span className="movie--date">
+              {movie.release_date || movie.first_air_date}
+            </span>
           </div>
           <div>
             Plot:{" "}
