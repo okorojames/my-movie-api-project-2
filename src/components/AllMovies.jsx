@@ -14,6 +14,8 @@ const AllMovies = () => {
           muted
           loop
           className="all--movie--video"
+          controlsList="nodownload"
+          style={{ pointerEvents: "none" }}
         ></video>
       </div>
     </div>

@@ -15,14 +15,37 @@ const Header = ({}) => {
     burger_one.current.classList.toggle("nav--toggle");
     burger_two.current.classList.toggle("nav--toggle");
     burger_three.current.classList.toggle("nav--toggle");
+    navOverlay.current.classList.toggle("nav--toggle");
   }
 
   function closeNavLink() {
+    nav_links.current.classList.remove("nav-toggle");
+    burger_one.current.classList.remove("nav--toggle");
+    burger_two.current.classList.remove("nav--toggle");
+    burger_three.current.classList.remove("nav--toggle");
+    navOverlay.current.classList.remove("nav--toggle");
+  }
+  function toggleOverlay() {
     nav_links.current.classList.toggle("nav-toggle");
     burger_one.current.classList.toggle("nav--toggle");
     burger_two.current.classList.toggle("nav--toggle");
     burger_three.current.classList.toggle("nav--toggle");
+    navOverlay.current.classList.toggle("nav--toggle");
   }
+  window.addEventListener("resize", () => {
+    if (innerWidth > 850) {
+      nav_links.current.classList.remove("nav-toggle");
+      burger_one.current.classList.remove("nav--toggle");
+      burger_two.current.classList.remove("nav--toggle");
+      burger_three.current.classList.remove("nav--toggle");
+      navOverlay.current.classList.remove("nav--toggle");
+    } else if (
+      innerWidth >= 850 &&
+      nav_links.current.classList.includes("nav--toggle")
+    ) {
+      navOverlay.current.classList.toggle("nav--toggle");
+    }
+  });
   return (
     <header>
       <nav>
@@ -60,6 +83,11 @@ const Header = ({}) => {
           <div className="burger burger--three" ref={burger_three}></div>
         </div>
       </nav>
+      <div
+        className="nav--overlay"
+        ref={navOverlay}
+        onClick={toggleOverlay}
+      ></div>
     </header>
   );
 };

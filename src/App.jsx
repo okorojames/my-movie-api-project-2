@@ -63,7 +63,10 @@ function App() {
             path="/"
             element={movies && <HomePage movies={movies} movies1={movies1} />}
           />
-          <Route path="/movie/:id" element={<MoreInfoPage />} />
+          <Route
+            path="/movie/:id"
+            element={<MoreInfoPage movies1={movies1} />}
+          />
           <Route path="/search-movie" element={<SearchMovie />} />
           <Route path="/all-movies" element={<AllMovies />} />
         </Routes>
