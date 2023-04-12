@@ -291,7 +291,8 @@ nav {
 }
 /*  */
 .footer--section {
-  position: fixed;
+  position: sticky;
+  margin-top: 3rem;
   bottom: 0;
   right: 0;
   left: 0;
@@ -333,9 +334,6 @@ nav {
 /*  */
 @media screen and (max-width: 992px) {
   .homepage-col-2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .all--movies--col {
     grid-template-columns: repeat(2, 1fr);
   }
   .searched--movies--row {
@@ -395,6 +393,9 @@ nav {
   /*  */
   .home-page {
     grid-template-columns: 1fr 1fr;
+  }
+  .all--movies--col {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 /*  */
