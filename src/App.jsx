@@ -5,6 +5,7 @@ import HomePage from "./HomePage";
 import MoreInfoPage from "./components/MoreInfoPage";
 import SearchMovie from "./components/SearchMovie";
 import AllMovies from "./components/AllMovies";
+import Footer from "./components/Footer";
 
 function App() {
   const [movies1, setMovies1] = useState();
@@ -66,6 +67,7 @@ function App() {
           <Route path="/search-movie" element={<SearchMovie />} />
           <Route path="/all-movies" element={<AllMovies />} />
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );

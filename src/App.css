@@ -290,6 +290,23 @@ nav {
   gap: 3rem;
 }
 /*  */
+.footer--section {
+  display: flex;
+  flex-direction: column;
+  background: var(--dark-two);
+  color: var(--light-one);
+  align-items: center;
+  padding: 4rem 2rem;
+}
+.footer--first--col {
+  display: flex;
+  margin-bottom: 2rem;
+  gap: 1.5rem;
+}
+.footer--section a {
+  color: var(--minor-one);
+}
+/*  */
 /* MEDIA QUERIES */
 /*  */
 /*  */
