@@ -54,6 +54,12 @@ a:visited {
 }
 header {
   border-bottom: 2px solid rgba(23, 26, 29, 0.52);
+  position: sticky;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: var(--dark-one);
+  z-index: 760;
 }
 nav {
   position: relative;
