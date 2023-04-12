@@ -361,7 +361,7 @@ nav {
   .homepage-col-2 {
     grid-template-columns: repeat(1, 1fr);
     justify-items: center;
-    overflow-y: initial;
+    overflow-y: scroll;
   }
   .searched--movies--row {
     grid-template-columns: 1fr;
@@ -372,7 +372,7 @@ nav {
   }
   /*  */
   .home-page {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 /*  */
@@ -395,9 +395,23 @@ nav {
     font-size: 3rem;
   }
 }
+@media screen and (max-width: 476px) {
+  html {
+    font-size: 50%;
+  }
+}
 @media screen and (max-width: 376px) {
   .all--movies--col {
     grid-template-columns: 1fr;
+  }
+  .home-page {
+    grid-template-columns: 1fr;
+  }
+  .home-page-col-1 {
+    overflow-y: initial;
+  }
+  .homepage-col-2 {
+    overflow-y: initial;
   }
 }
 /*  */

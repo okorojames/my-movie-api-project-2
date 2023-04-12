@@ -54,6 +54,17 @@ const HomePage = ({ movies, movies1 }) => {
         </div>
         {/* Home ccol 2 */}
         <div className="homepage-col-2">
+          <h2
+            className="col--2--h2"
+            style={{
+              justifySelf: "end",
+              marginRight: "8px",
+              fontWeight: "400",
+              color: "#e0313080",
+            }}
+          >
+            Released
+          </h2>
           {movies.map((movie, index) => (
             <Link to={`/movie/${movie.id}`} state={{ movie }} key={index}>
               <div className="movie">
