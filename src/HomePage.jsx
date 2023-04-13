@@ -61,6 +61,8 @@ const HomePage = ({ movies, movies1 }) => {
               marginRight: "8px",
               fontWeight: "400",
               color: "#e0313080",
+              position: "absolute",
+              top: "1%",
             }}
           >
             Released
