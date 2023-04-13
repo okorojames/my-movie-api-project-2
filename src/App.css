@@ -436,6 +436,9 @@ nav {
   .home-page {
     grid-template-columns: 1fr;
   }
+  .col--2--h2 {
+    display: none;
+  }
   .home-page-col-1 {
     overflow-y: initial;
   }
