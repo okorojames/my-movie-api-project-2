@@ -224,6 +224,17 @@ nav {
 .search--movie--section {
   padding: 0 6rem;
   margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+.search--loader {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 2rem;
 }
 .search--movie--form {
   margin: 0 auto;
@@ -297,12 +308,8 @@ nav {
 }
 /*  */
 .footer--section {
-  position: sticky;
   margin-top: 3rem;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: 570;
+  margin-bottom: auto;
   display: flex;
   flex-direction: column;
   background: var(--dark-two);

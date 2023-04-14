@@ -1,10 +1,22 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import defaultImg from "./images/defaultImg.jpg";
+import loaderGif from "./images/loader.gif";
 
-const HomePage = ({ movies, movies1 }) => {
+const HomePage = ({ movies, movies1, isLoading }) => {
   return (
     <div className="home-page-holder">
+      {isLoading && isLoading ? (
+        <img
+          src={loaderGif}
+          style={{
+            width: "150px",
+            display: "flex",
+            justifyContent: "center",
+            margin: "0 auto",
+          }}
+        />
+      ) : null}
       <main className="home-page">
         {/* Home ccol 1 */}
         <div className="home-page-col-1">

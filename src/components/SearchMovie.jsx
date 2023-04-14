@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import defaultImg from "../images/defaultImg.jpg";
+import loader from "../images/loader.gif";
 
 const SearchMovie = () => {
   const [userInput, setUserInput] = useState();
   const [searchedMovie, setSearchedMovie] = useState();
+  const [loading, setLoading] = useState(false);
   // styled component
   const searchedMoviesStyles = {
     display: "grid",
@@ -16,16 +18,24 @@ const SearchMovie = () => {
       `https://www.omdbapi.com/?apikey=dc9d4f98&s=${userInput}`
     );
     const data = await response.json();
+    if (!response.ok) {
+      setLoading(false);
+    }
+    if (data) {
+      setLoading(false);
+    }
     setSearchedMovie(data.Search);
   }
   //
   function getMovieData(e) {
     e.preventDefault();
+    setLoading(true);
     getMovies();
   }
   // submit user input
   function submitUserInput(e) {
     e.preventDefault();
+    setLoading(true);
     getMovies();
   }
   return (
@@ -34,6 +44,7 @@ const SearchMovie = () => {
         action=""
         className="search--movie--form"
         onSubmit={submitUserInput}
+        style={{ marginBottom: "auto" }}
       >
         <input
           type="text"
@@ -54,6 +65,9 @@ const SearchMovie = () => {
           Search
         </a>
       </form>
+      {loading && loading ? (
+        <img className="search--loader" src={loader} alt="" />
+      ) : null}
       <div className="searched--movies--row" style={searchedMoviesStyles}>
         {searchedMovie &&
           searchedMovie.map((movie) => (

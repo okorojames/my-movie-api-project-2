@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 function App() {
   const [movies1, setMovies1] = useState();
   const [movies, setMovies] = useState();
+  const [isLoading, setIsLoading] = useState(false);
   // getting the movie data
   async function getMovies() {
     // data one
@@ -44,6 +45,10 @@ function App() {
       data4.results,
     ];
     //
+    if (allData) {
+      setIsLoading(false);
+    }
+    //
     setMovies(allData);
     setMovies1(data4.results);
   }
@@ -51,6 +56,7 @@ function App() {
   //
   // useEffect which helps makes the movie data load and fetch before page contents even display
   useEffect(() => {
+    setIsLoading(true);
     getMovies();
   }, []);
   //
@@ -61,7 +67,15 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={movies && <HomePage movies={movies} movies1={movies1} />}
+            element={
+              movies && (
+                <HomePage
+                  movies={movies}
+                  movies1={movies1}
+                  isLoading={isLoading}
+                />
+              )
+            }
           />
           <Route path="/movie/:id" element={<MoreInfoPage />} />
           <Route path="/search-movie" element={<SearchMovie />} />

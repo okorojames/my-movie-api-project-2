@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import vidIntro from "../video/vid-intro.mp4";
 import { Link } from "react-router-dom";
 import defaultImg from "../images/defaultImg.jpg";
+import loaderGif from "../images/loader.gif";
 
 const AllMovies = () => {
   const [allMovies, setAllMovies] = useState();
+  const [loader, setLoader] = useState();
   //fetching data
   async function getAllMovies() {
     const res1 = await fetch(
@@ -60,11 +62,15 @@ const AllMovies = () => {
       ...data9.results,
       ...data10.results,
     ];
+    if (allMovieData) {
+      setLoader(false);
+    }
     setAllMovies(allMovieData);
   }
   //
   //
   useEffect(() => {
+    setLoader(true);
     getAllMovies();
   }, []);
   //
@@ -89,6 +95,18 @@ const AllMovies = () => {
           </div>
         </div>
       </div>
+      {loader && loader ? (
+        <img
+          src={loaderGif}
+          alt=""
+          style={{
+            width: "150px",
+            display: "flex",
+            justifyContent: "center",
+            margin: "0 auto",
+          }}
+        />
+      ) : null}
       {/* movies here */}
       <div className="all--movies--col">
         {allMovies &&
