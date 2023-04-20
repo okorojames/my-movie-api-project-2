@@ -10,6 +10,7 @@ const MoreInfoPage = () => {
   }, []);
   return (
     <section
+      className="more--info--section"
       style={{
         display: "flex",
         justifyContent: "center",

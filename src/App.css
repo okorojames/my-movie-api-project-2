@@ -48,6 +48,12 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
+.home-page-holder,
+.all--movies--section,
+.more--info--section,
+.search--movie--section {
+  min-height: calc(100vh - 220px);
+}
 a:link,
 a:visited {
   text-decoration: none;

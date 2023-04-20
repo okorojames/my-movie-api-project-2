@@ -43,7 +43,7 @@ const SearchMovie = () => {
       <form
         action=""
         className="search--movie--form"
-        onSubmit={submitUserInput}
+        onKeyUp={submitUserInput}
         style={{ marginBottom: "auto" }}
       >
         <input
